@@ -13,7 +13,6 @@ namespace TestProject.Core.DataAccess
         Task<T> AddAsync(T entity);
         T Update(T entity);
         Task<T> UpdateAsync(T entity);
-
         void Delete(T entity);
         Task DeleteAsync(T entity);
         T Get(Expression<Func<T, bool>> filter = null);
