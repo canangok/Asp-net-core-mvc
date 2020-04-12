@@ -1,0 +1,58 @@
+﻿@model TestProject.MVCWebUI.Models.CategoryViewModel
+@{
+    ViewData["Title"] = "GetCategories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box table-responsive">
+            <div class="dropdown pull-right" >
+                <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                    <i class="zmdi zmdi-more-vert"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" data-toggle="modal" data-target="#category-adding-modal">Add</a></li>
+                </ul>
+            </div>
+           
+            <h4 class="header-title m-t-0 m-b-30">List of Categories</h4>
+
+            <div id="datatable-buttons_wrapper" class="dataTables_wrapper form-inline">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">IsActive</th>
+                            <th scope="col">AddedBy</th>
+                            <th scope="col">AddedDate</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var category in Model.Categories)
+                        {
+                            <tr role="row" class="orange-dot">
+                                <td class="sorting_asc" tabindex="0">@category.Id</td>
+                                <td>@category.Name</td>
+                                <td>@category.IsActive</td>
+                                <td>@category.AddedBy</td>
+                                <td>@category.AddedDate</td>
+                                <td align="center"><button class="btn btn-purple" data-toggle="modal" data-target="#category-updating-modal" onclick="editCategory(@category.Id)">
+                                     Edit</button></td>
+                                <td align="center">
+                                    <button class="btn btn-danger" onclick="deleteCategory(@category.Id)">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

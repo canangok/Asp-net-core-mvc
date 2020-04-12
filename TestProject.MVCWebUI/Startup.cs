@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TestProject.Business.Abstract;
+using TestProject.Business.Concrete.Managers;
+using TestProject.DataAccess.Abstract;
+using TestProject.DataAccess.Concrete.EntityFrameworkCore;
 
 namespace TestProject.MVCWebUI
 {
@@ -23,6 +27,9 @@ namespace TestProject.MVCWebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //bunlar benim servislerimi kullanmam da yardýmcý olacak kýsým. Middleware
+            services.AddScoped<ICategoryService, CategoryManager>(); //ýcategoryservice çaðýrýldýðý zaman categorymanageri da oluþturacak.
+            services.AddScoped<ICategoryDal, EfCategoryDal>();
             services.AddControllersWithViews();
         }
 
