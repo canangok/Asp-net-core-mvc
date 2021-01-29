@@ -6,9 +6,9 @@ using TestProject.Entity.Concrete;
 
 namespace TestProject.MVCWebUI.Models
 {
-    public class CategoryViewModel
+    public class ProductViewModel
     {
-        public Category Category{ get; set; }
-        public List<Category> Categories { get; set; }
+        public Product Product { get; set; }
+        public List<Product> Products { get; set; }
     }
 }
