@@ -7,7 +7,7 @@ using TestProject.Entity.Concrete;
 
 namespace TestProject.DataAccess.Concrete.EntityFrameworkCore
 {
-    public class EfProductDal : EfEntityRepositoryBase<Product,TestProjectDBContext>, IProductDal
+    public class EfProductDal : EfEntityRepositoryBase<Product, TestProjectDBContext>, IProductDal
     {
 
     }

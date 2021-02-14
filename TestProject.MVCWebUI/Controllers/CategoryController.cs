@@ -48,7 +48,7 @@ namespace TestProject.MVCWebUI.Controllers
             }
             return RedirectToAction("GetCategories");
         }
-
+        [HttpGet]
         public JsonResult Edit(int id)
         {
             if(id == 0)
@@ -82,6 +82,7 @@ namespace TestProject.MVCWebUI.Controllers
                         IsActive = categoryViewModel.Category.IsActive,
                         Name = categoryViewModel.Category.Name
                     };
+                    
                     _categoryService.Update(categoryForAdd);
                     return RedirectToAction("GetCategories");
                 }

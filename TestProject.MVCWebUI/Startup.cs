@@ -30,6 +30,9 @@ namespace TestProject.MVCWebUI
             //bunlar benim servislerimi kullanmam da yardýmcý olacak kýsým. Middleware
             services.AddScoped<ICategoryService, CategoryManager>(); //ýcategoryservice çaðýrýldýðý zaman categorymanageri da oluþturacak.
             services.AddScoped<ICategoryDal, EfCategoryDal>();
+
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<IProductDal, EfProductDal>();
             services.AddControllersWithViews();
         }
 
