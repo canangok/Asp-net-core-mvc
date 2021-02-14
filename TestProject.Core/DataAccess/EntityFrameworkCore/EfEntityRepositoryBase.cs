@@ -9,6 +9,8 @@ using TestProject.Core.Entities;
 
 namespace TestProject.Core.DataAccess.EntityFrameworkCore
 {
+    //public abstract class SqlReaderBase<T> : ConnectionProvider
+    //where T : new()
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
         where TEntity : class, IEntity, new()
         where TContext : DbContext, new()

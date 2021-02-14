@@ -40,7 +40,8 @@
                                 <td>@category.IsActive</td>
                                 <td>@category.AddedBy</td>
                                 <td>@category.AddedDate</td>
-                                <td align="center"><button class="btn btn-purple" data-toggle="modal" data-target="#category-updating-modal" 
+                                <td align="center">
+                                <button class="btn btn-purple" data-toggle="modal" data-target="#category-updating-modal" 
                                      onclick="editCategory (@category.Id)">Edit</button></td>
                                 <td align="center">
                                     <button class="btn btn-danger" onclick="deleteCategory(@category.Id)">Delete </button>
@@ -106,7 +107,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-7" class="control-label">Is Active</label>
-                                <input asp-for="@Model.Category.IsActive" class="form-control checkbox" id="categoryIsActive"  />
+                                <input asp-for="@Model.Category.IsActive" type="checkbox" class="form-control checkbox" id="categoryIsActive" />
                             </div>
                         </div>
                     </div>

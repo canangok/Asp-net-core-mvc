@@ -11,8 +11,10 @@ namespace TestProject.DataAccess.Concrete.EntityFrameworkCore
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-FER2F6Q;Database=TestProject;integrated security=true;Connection Timeout=1800;MultipleActiveResultSets=True");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-CANAN\SQLEXPRESS;Database=TestProject;integrated security=true;Connection Timeout=1800;MultipleActiveResultSets=True");
         }
+
+        //  public TestProjectDBContext(DbContextOptions<TestProjectDBContext> options) : base(options) { }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
 
